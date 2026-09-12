@@ -1,4 +1,5 @@
-import supabaseAdmin from "../../lib/supabaseAdmin";
+git config --global user.email "your-email@example.com"
+git config --global user.name "Your Name"import supabaseAdmin from "../../lib/supabaseAdmin";
 import { serializeDonation } from "../../lib/campaignSerializers";
 
 export default async function handler(req, res) {

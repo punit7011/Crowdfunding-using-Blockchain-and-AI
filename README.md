@@ -55,19 +55,30 @@ Key contract events:
 - Supabase project
 - OpenRouter API key (optional, for AI features)
 
+## First Steps
+
+The `node_modules` folder is not included in this repository. Run the setup below to install dependencies before doing anything else.
+
+```bash
+npm install
+```
+
+If install fails because `node_modules` is missing or corrupted, remove it and reinstall:
+
+```bash
+rd /s /q node_modules
+del package-lock.json
+npm install
+```
+
 ## Local Setup
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-2. Copy the environment template:
+1. Copy the environment template:
    ```bash
    copy .env.example .env
    ```
 
-3. Fill required values in `.env`:
+2. Fill required values in `.env`:
 
    | Variable | Purpose |
    |----------|---------|
@@ -88,12 +99,12 @@ Key contract events:
    | `OPENROUTER_MODEL` | Optional; default `gpt-4o-mini` |
    | `OPENROUTER_API_HOST` | Optional; default `https://openrouter.ai/api` |
 
-4. Sync the Prisma schema to Supabase:
+3. Sync the Prisma schema to Supabase:
    ```bash
    npm run db:push
    ```
 
-5. Compile and deploy contracts to Sepolia:
+4. Compile and deploy contracts to Sepolia:
    ```bash
    npm run contracts:compile
    npm run contracts:deploy:sepolia
@@ -101,7 +112,7 @@ Key contract events:
 
    The deploy script automatically writes `NEXT_PUBLIC_FACTORY_ADDRESS` into `.env` or `.env.local` and refreshes ABI files in `smart-contract/build/`.
 
-6. Start the development server:
+5. Start the development server:
    ```bash
    npm run dev
    ```
